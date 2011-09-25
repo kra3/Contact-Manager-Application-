@@ -3,10 +3,8 @@
 #Copyright (c) Arun.K.R
 #Creative Commons Attribution-Share Alike 3.0 Unported' <http://creativecommons.org/licenses/by-sa/3.0/>
 #short for 'c'ontact 'b'ook
-#this module as it's doesn't do anything
-#because I succeded in splitting source file into modules [ഞാനാരാ മോന്‍  ;-) ] 
-#I doubt wether the first line is needed. I think don't since this is not a
-#stand alone module. എതായാലും ഒരു വഴിക്ക്  പോണതല്ലെ, കിടന്നോട്ടെ :-)
+#this module as it's doesn't do anything; because I succeded in splitting source file into modules
+#I doubt wether the first line is needed. I think don't since this is not a stand alone module.
 
 import os.path
 import cPickle as pkl
@@ -19,6 +17,11 @@ class ContactBook:
 	# although this is not a good practice (because it can't be Primary Key)
 	# we use it for simplicity. And is class variable.
 	contacts = {}
+	#this will look like
+	#{ NAME1:[ [EMAILS],[PHONE NUMBERS] ]
+	#  NAME2:[ [EMAILS],[PHONE NUMBERS] ]
+	#  ..................................
+	#  NAMEn:[ [EMAILS],[PHONE NUMBERS] ] }
 
 	def __init__(self):
 		''' loading of contacts already persisted occures here'''
@@ -63,7 +66,7 @@ class ContactBook:
 	def showNames(self):
 		'''used to list all contact's name'''
 		for n in ContactBook.contacts.keys():
-			print '%s \n ' % n
+			print '%s' % n
 
 	def showContact(self, name):
 		'''used to show a specific contact'''
@@ -72,9 +75,13 @@ class ContactBook:
 		#A difference b/n C++, Java etc with Python
 		if self.hasContact(name) == True:
 			print 'name  : %s' % name
-			tmp = ContactBook.contacts[name] #give phone and email of given name as a list
-			print 'email : %s' % tmp[0] #fist item is email
-			print 'phone : %s' % tmp[1] #second is phone
+			tmp = ContactBook.contacts[name] #give phone and email of given name as a list of lists
+			print 'emails:'
+			for i in range(0,len(tmp[0])):	#fist item is email
+				print ' '*5, '%s' % tmp[0][i]
+			print 'phone :'
+			for i in range(0,len(tmp[1])):	#2nd item is phone
+				print ' '*5, '%s' % tmp[1][i]
 
 	def hasContact(self, name):
 		'''look wether there is a contact for specified name'''
@@ -90,5 +97,4 @@ class ContactBook:
 		if self.hasContact(name) == True:
 			#ContactBook.contacts[name] returns a list, of wich 2nd item is phone.
 			return ContactBook.contacts[name][1]
-
 #class definition ends here

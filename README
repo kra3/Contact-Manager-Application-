@@ -13,21 +13,22 @@ Creative Commons Attribution-Share Alike 3.0 Unported Licence.
 <http://creativecommons.org/licenses/by-sa/3.0/>
 And copy write is for the author.<Arun.K.R>
 
-		 Contact Manager Version 1.0
+		 Contact Manager Version 2.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Usage: cm OPTION(S) [CONTACT_NAME]
 This program manages your contacts efficiently.
 
 OPTIONS without CONTACT_NAME
--h		help
--v		version
--a		add contact
--l		list all contact's name
+-h		Help
+-v		Version
+-n		New contact
+-l		List all contact's name
 
 OPTIONS with CONTACT_NAME
--r 		remove contact
--m		modify contact
--c  	show specified contact
+-r 		Remove contact
+-m		Modify contact
+-d  	Display contact
+-a		Add info. to existing contact
 
 No two OPTIONS can be specified at a time.
 
