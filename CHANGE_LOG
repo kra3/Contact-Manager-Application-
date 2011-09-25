@@ -1,0 +1,16 @@
+CHANGE LOG:
+
+Version 1.0 {December xx, 2008}
+-------------------------------
+Very basic version
+Can add one and only one phone number and contact with a name.
+Can't add another phone and/or email after a contact is added.
+Many improvements that can be done are specified in comments with ToDo:
+storage format:
+{ 
+name1:[email,phone], 
+name2:[email,phone], 
+...
+nameN:[email,phone]
+}
+
