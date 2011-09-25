@@ -17,7 +17,7 @@ nameN:[email,phone]
 Version 2.0 {December xx, 2008}
 -------------------------------
 Now can add as many as phone and email for a person.
-Can add inforamations after a contact is added.
+Can add informations after a contact is added.
 There are changes in commandline options:
 	-c is removed in favaour of -d
 	-a is added to add info to existing contact
